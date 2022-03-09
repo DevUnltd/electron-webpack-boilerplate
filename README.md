@@ -1,67 +1,44 @@
  <div align="center">
- <img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
-  <h2>Typescript Library Boilerplate Basic</h2>
-  <blockquote>Minimal Library Starter Kit for your Typescript projects</blockquote>
- 
- <a href="https://www.npmjs.com/package/@hodgef/ts-library-boilerplate-basic"><img src="https://badgen.net/npm/v/@hodgef/ts-library-boilerplate-basic?color=blue" alt="npm version"></a> <a href="https://github.com/hodgef/ts-library-boilerplate"><img src="https://img.shields.io/github/last-commit/hodgef/ts-library-boilerplate" alt="latest commit"></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"><img alt="Build Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/ts-library-boilerplate-basic/actions"> <img alt="Publish Status" src="https://github.com/hodgef/ts-library-boilerplate-basic/workflows/Publish/badge.svg?color=green" /></a>
+  <img align="center" width="330" src="https://user-images.githubusercontent.com/25509135/157361952-f5263114-06a8-43d8-b053-0ea6012ca764.svg" />
+  <h2>electron-webpack-boilerplate</h2>
 
-<strong>For a plain Javascript alternative, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
+  <blockquote>Minimal Eletron Starter Kit built with Typescript, React, Webpack 5 and Babel 7</blockquote>
+ 
+ <a href="https://www.npmjs.com/package/electron-webpack-boilerplate"><img src="https://badgen.net/npm/v/electron-webpack-boilerplate?color=blue" alt="npm version"></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate"><img src="https://img.shields.io/github/last-commit/hodgef/electron-webpack-boilerplate" alt="latest commit"></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate/actions"><img alt="Build Status" src="https://github.com/hodgef/electron-webpack-boilerplate/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate/actions"> <img alt="Publish Status" src="https://github.com/hodgef/electron-webpack-boilerplate/workflows/Publish/badge.svg?color=green" /></a>
+
+<strong>To create a JS library, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
 
 </div>
 
 ## ⭐️ Features
 
+- Electron 17
+- React 17
 - Webpack 5
 - Babel 7
 - Hot reloading (`npm start`)
-- Automatic Types file generation (index.d.ts)
-- UMD exports, so your library works everywhere.
-- Jest unit testing
-- Customizable file headers for your build [(Example 1)](https://github.com/hodgef/ts-library-boilerplate-basic/blob/master/build/index.js) [(Example2)](https://github.com/hodgef/ts-library-boilerplate-basic/blob/master/build/css/index.css)
-- Daily [dependabot](https://dependabot.com) dependency updates
+- Jest unit testing (+ Enzyme)
 
 ## 📦 Getting Started
 
 ```
-git clone https://github.com/hodgef/ts-library-boilerplate-basic.git myLibrary
+git clone https://github.com/hodgef/electron-webpack-boilerplate.git my-app
 npm install
 ```
+
+> ⚠️ Note: This boilerplate uses `nodeIntegration` by default, which allows your renderer code to access node. Only use this boilerplate if you are running trusted code in your app. Alternatively, you can change this setting in `src/main/index.ts` and adjust accordingly.
 
 ## 💎 Customization
 
 > Before shipping, make sure to:
 
 1. Edit `LICENSE` file
-2. Edit `package.json` information (These will be used to generate the headers for your built files)
-3. Edit `library: "MyLibrary"` with your library's export name in `./webpack.config.js`
+2. Edit `package.json` information (This will be used to package your app)
+3. Set-up code signing, notarization for your app (Additional docs on this coming soon).
 
-## 🚀 Deployment
+## 🚀 Development
 
-1. `npm publish`
-2. Your users can include your library as usual
-
-### npm
-
-```
-import MyLibrary from 'my-library';
-const libraryInstance = new MyLibrary();
-...
-```
-
-### self-host/cdn
-
-```
-<script src="build/index.js"></script>
-
-const MyLibrary = window.MyLibrary.default;
-const libraryInstance = new MyLibrary();
-...
-```
-
-## ✅ Libraries built with this boilerplate
-
-> Made a library using this starter kit? Share it here by [submitting a pull request](https://github.com/hodgef/ts-library-boilerplate-basic/pulls)!
-
-- [simple-keyboard](https://github.com/hodgef/simple-keyboard) - Javascript Virtual Keyboard
-- [react-simple-keyboard](https://github.com/hodgef/react-simple-keyboard) - React Virtual Keyboard
-- [simple-keyboard-layouts](https://github.com/hodgef/simple-keyboard-layouts) - Keyboard layouts for simple-keyboard
+- Use `npm start` to develop your app with Hot Reloading on changes.
+- Use `npm serve:dist` to serve a semi-production app from the build folder.
+- Use `npm run dist` to build executables for your app, according to the information in your package.json.
+- Use `npm run test` to run unit tests for your app.
