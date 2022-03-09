@@ -2,7 +2,7 @@
   <img align="center" width="330" src="https://user-images.githubusercontent.com/25509135/157361952-f5263114-06a8-43d8-b053-0ea6012ca764.svg" />
   <h2>electron-webpack-boilerplate</h2>
 
-  <blockquote>Minimal Eletron Starter Kit built with Typescript, React, Webpack 5 and Babel 7</blockquote>
+  <blockquote>Minimal Electron Starter Kit built with Typescript, React, Webpack 5 and Babel 7</blockquote>
  
  <a href="https://www.npmjs.com/package/electron-webpack-boilerplate"><img src="https://badgen.net/npm/v/electron-webpack-boilerplate?color=blue" alt="npm version"></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate"><img src="https://img.shields.io/github/last-commit/hodgef/electron-webpack-boilerplate" alt="latest commit"></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate/actions"><img alt="Build Status" src="https://github.com/hodgef/electron-webpack-boilerplate/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/hodgef/electron-webpack-boilerplate/actions"> <img alt="Publish Status" src="https://github.com/hodgef/electron-webpack-boilerplate/workflows/Publish/badge.svg?color=green" /></a>
 
