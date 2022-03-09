@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "outDir": "build",
+      "module": "esnext",
+      "target": "es5",
+      "allowJs": true,
+      "sourceMap": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "lib": ["es2018", "dom"],
+      "moduleResolution": "node",
+      "jsx": "react",
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+      "downlevelIteration": true,
+      "importHelpers": true,
+      "skipLibCheck": true,
+      "strictNullChecks": false,
+      "esModuleInterop": true,
+    },
+    "include": ["src/main", "src/renderer", "src/global.d.ts"]
+}

@@ -1,0 +1,19 @@
+.header {
+  padding: 20px;
+  background: #009245;
+  color: white;
+  user-select: none;
+  position: sticky;
+  top: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  min-width: 60px;
+  display: inline-block;
+}
+
+.header a.active {
+  font-weight: 700;
+}

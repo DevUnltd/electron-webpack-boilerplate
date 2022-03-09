@@ -1,0 +1,147 @@
+{
+  "name": "electron-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Minimal Eletron boilerplate built with Typescript, Webpack 5 and Babel 7",
+  "main": "build/index.js",
+  "types": "build/types/index.d.ts",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node scripts/start.js",
+    "serve:dist": "npm run build && electron ./build",
+    "build": "cross-env NODE_ENV=production node scripts/build.js",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "test": "jest --silent",
+    "test:verbose": "jest --verbose",
+    "coverage": "npm run test -- --coverage",
+    "trypublish": "npm publish || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hodgef/electron-webpack-boilerplate"
+  },
+  "author": "Francisco Hodge <hello@franciscohodge.com> (https://github.com/hodgef)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hodgef/electron-webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/hodgef/electron-webpack-boilerplate",
+  "keywords": [
+    "library",
+    "starter",
+    "es6"
+  ],
+  "build": {
+    "extends": null,
+    "productName": "electron-webpack-boilerplate",
+    "appId": "io.electron.webpack.boilerplate.app",
+    "copyright": "2022-present, Francisco Hodge",
+    "artifactName": "${productName}-${platform}.${ext}",
+    "files": [
+      "build/**/*",
+      "embedded.provisionprofile"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "hodgef",
+        "repo": "electron-webpack-boilerplate"
+      }
+    ],
+    "win": {
+      "icon": "public/icons/icon.ico",
+      "target": "nsis",
+      "publisherName": "Francisco Hodge"
+    },
+    "linux": {
+      "icon": "public/icons/icon.png",
+      "target": "zip"
+    },
+    "afterSign": "electron-builder-notarize",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "./build/entitlements.mac.plist",
+      "icon": "public/icons/icon.icns",
+      "target": [
+        "dmg",
+        "zip",
+        "mas"
+      ],
+      "hardenedRuntime": true,
+      "provisioningProfile": "embedded.provisionprofile"
+    },
+    "mas": {
+      "entitlements": "./build/entitlements.mas.plist",
+      "entitlementsInherit": "./build/entitlements.mas.inherit.plist",
+      "hardenedRuntime": false
+    },
+    "dmg": {
+      "icon": false
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-transform-typescript": "^7.16.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.0",
+    "@electron/remote": "^2.0.5",
+    "@types/enzyme": "^3.10.11",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^27.4.1",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.10",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.3",
+    "babel-preset-minify": "^0.5.0",
+    "classnames": "^2.2.6",
+    "cross-env": "7.0.3",
+    "css-loader": "^6.6.0",
+    "del": "^5.1.0",
+    "electron": "^17.1.0",
+    "electron-builder": "^22.14.13",
+    "electron-builder-notarize": "^1.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^7.32.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "prettier": "^2.5.1",
+    "prettier-webpack-plugin": "^1.2.0",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0",
+    "react-router-dom": "^5.1.2",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "4.7.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jest-environment-jsdom",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/testMock.js",
+      "\\.(css|less)$": "<rootDir>/scripts/testMock.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
+  }
+}
