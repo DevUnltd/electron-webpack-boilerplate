@@ -1,6 +1,6 @@
 {
   "name": "electron-webpack-boilerplate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Minimal Electron boilerplate built with Typescript, Webpack 5 and Babel 7",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
