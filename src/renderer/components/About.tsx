@@ -1,6 +1,5 @@
 import classnames from "classnames";
 import * as React from "react";
-import "../styles/About.css";
 
 import icon from "../images/icon.png";
 
