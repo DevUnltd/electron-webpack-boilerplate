@@ -26,9 +26,13 @@
   },
   "homepage": "https://github.com/hodgef/electron-webpack-boilerplate",
   "keywords": [
-    "library",
-    "starter",
-    "es6"
+    "electron",
+    "webpack",
+    "typescript",
+    "babel",
+    "react",
+    "boilerplate",
+    "starter"
   ],
   "build": {
     "extends": null,
