@@ -8,6 +8,9 @@
 
 <strong>To create a JS library, check out [js-library-boilerplate-basic](https://github.com/hodgef/js-library-boilerplate-basic).</strong>
 
+   
+
+ 
 </div>
 
 ## ⭐️ Features
@@ -34,7 +37,7 @@ npm install
 
 1. Edit `LICENSE` file
 2. Edit `package.json` information (This will be used to package your app)
-3. Set-up code signing, notarization for your app (Additional docs on this coming soon).
+3. (Optional) Set-up releases, code signing, notarization for your app. Additional docs on this coming soon.
 
 ## 🚀 Development
 
