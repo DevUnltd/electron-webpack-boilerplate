@@ -12,7 +12,10 @@ const Home = () => {
       <div>
         <ul style={{ marginTop: 40 }} className={classnames("links")}>
           <li>
-            <a href="https://github.com/hodgef/electron-webpack-boilerplate">
+            <a
+              target="_blank"
+              href="https://github.com/hodgef/electron-webpack-boilerplate"
+            >
               <img src={gh} height={20} /> hodgef/electron-webpack-boilerplate
             </a>
           </li>

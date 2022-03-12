@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron');
+const { app, shell, BrowserWindow } = require('electron');
 import { initialize, enable } from "@electron/remote/main";
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -19,6 +19,15 @@ function createWindow () {
     })
 
     enable(mainWindow.webContents);
+
+    /**
+     * Open URLs in browser by default
+     */
+    mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+      if (!['https:', 'http:'].includes(new URL(url).protocol)) return;
+      shell.openExternal(url);
+      return { action: 'deny' };
+    });
 
     if(isDevelopment){
         // load the index.html of the app.
