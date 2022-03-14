@@ -36,8 +36,8 @@
   ],
   "build": {
     "extends": null,
-    "productName": "electron-webpack-boilerplate",
-    "appId": "io.electron.webpack.boilerplate.app",
+    "productName": "PRSS",
+    "appId": "io.prss.app",
     "copyright": "2022-present, Francisco Hodge",
     "artifactName": "${productName}-${platform}.${ext}",
     "files": [
