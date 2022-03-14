@@ -37,6 +37,7 @@ jobs:
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
           max_attempts: 3
         env:
-          API_KEY_ID: ${{ secrets.api_key_id }}
-          API_KEY_ISSUER_ID: ${{ secrets.api_key_issuer_id }}
+          APPLE_ID: ${{ secrets.apple_id }}
+          APPLE_ID_PASSWORD: ${{ secrets.apple_id_pwd }}
+          APPLE_TEAM_ID: ${{ secrets.apple_team_id }}
           GH_TOKEN: ${{ secrets.gh_token }}
