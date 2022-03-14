@@ -69,7 +69,6 @@
       "icon": "public/icons/icon.png",
       "target": "zip"
     },
-    "afterSign": "electron-builder-notarize",
     "mac": {
       "category": "public.app-category.productivity",
       "entitlements": "public/entitlements.mac.plist",
