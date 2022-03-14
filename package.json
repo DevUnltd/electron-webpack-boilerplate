@@ -76,9 +76,7 @@
       "entitlementsInherit": "./public/entitlements.mac.plist",
       "icon": "public/icons/icon.icns",
       "target": [
-        "mas",
-        "dmg",
-        "zip"
+        "mas"
       ],
       "hardenedRuntime": true,
       "provisioningProfile": "embedded.provisionprofile"
