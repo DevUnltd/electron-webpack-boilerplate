@@ -51,9 +51,18 @@
         "repo": "electron-webpack-boilerplate"
       }
     ],
+    "appx": {
+      "applicationId": "electronwebpack",
+      "identityName": "electron-webpack",
+      "publisher": "CN=fhodge",
+      "publisherDisplayName": "Francisco Hodge"
+    },
     "win": {
       "icon": "public/icons/icon.ico",
-      "target": "nsis",
+      "target": [
+        "appx",
+        "nsis"
+      ],
       "publisherName": "Francisco Hodge"
     },
     "linux": {
