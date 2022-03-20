@@ -52,10 +52,9 @@
       }
     ],
     "appx": {
-      "applicationId": "electronwebpack",
+      "applicationId": "PRSS",
       "identityName": "electron-webpack",
-      "publisher": "CN=fhodge",
-      "publisherDisplayName": "Francisco Hodge"
+      "publisher": "CN=Francisco Hodge, O=Francisco Hodge, L=Vancouver, S=British Columbia, C=CA"
     },
     "win": {
       "icon": "public/icons/icon.ico",
