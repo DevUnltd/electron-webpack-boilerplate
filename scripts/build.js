@@ -9,9 +9,9 @@ const compilerRenderer = webpack(configRenderer);
 
  (async () => {
    /**
-     * Delete build dir
+     * Delete build and dist dirs
      */
-    await del([path.join(__dirname, '../build')], { force: true });
+    await del([path.join(__dirname, '../build'), path.join(__dirname, '../dist')], { force: true });
 
     /**
      * Build main
