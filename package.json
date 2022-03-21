@@ -68,14 +68,17 @@
       "icon": "public/icons/icon.png",
       "target": "zip"
     },
-    "afterSign": "electron-builder-notarize",
+    "afterSign": "scripts/afterSignHook.js",
     "mac": {
       "category": "public.app-category.productivity",
       "entitlements": "public/entitlements.mac.plist",
       "entitlementsInherit": "./public/entitlements.mac.plist",
       "icon": "public/icons/icon.icns",
       "target": [
-        "zip", "dmg", "pkg", "mas"
+        "zip",
+        "dmg",
+        "pkg",
+        "mas"
       ],
       "hardenedRuntime": true,
       "provisioningProfile": "embedded.provisionprofile"
@@ -114,9 +117,11 @@
     "cross-env": "7.0.3",
     "css-loader": "^6.6.0",
     "del": "^5.1.0",
+    "dotenv": "^16.0.0",
     "electron": "^17.1.0",
     "electron-builder": "^22.14.13",
     "electron-builder-notarize": "^1.4.0",
+    "electron-notarize": "^1.1.1",
     "enzyme": "^3.11.0",
     "eslint": "^7.32.0",
     "file-loader": "^6.2.0",
