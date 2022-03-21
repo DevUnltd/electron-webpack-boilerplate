@@ -68,13 +68,15 @@
       "icon": "public/icons/icon.png",
       "target": "zip"
     },
-    "afterSign": "electron-builder-notarize",
+    "afterSign": "scripts/afterSignHook.js",
     "mac": {
       "category": "public.app-category.productivity",
       "entitlements": "public/entitlements.mac.plist",
       "entitlementsInherit": "./public/entitlements.mac.plist",
       "icon": "public/icons/icon.icns",
-      "target": ["dmg"],
+      "target": [
+        "dmg"
+      ],
       "hardenedRuntime": true,
       "provisioningProfile": "embedded.provisionprofile"
     },
