@@ -52,6 +52,12 @@ module.exports = async function (params) {
                 console.log('status', status);
             }
 
+            /**
+             * Validate staple
+             */
+            const validateRes = await stapleValidate(appPath);
+            console.log(validateRes);
+
         } else {
             console.log('No RequestUUID in response');
         }
@@ -60,7 +66,7 @@ module.exports = async function (params) {
 
     } catch (error) {
         console.error("Notarization failed!")
-        // console.error('ERR', error)
+        console.error('ERR', error)
     }
 }
 
@@ -73,7 +79,7 @@ const checkRequestStatus = (requestUUID) => {
 
             if(res.includes('in progress')){
                 if(attempts < 50){
-                    console.log(`In progress. Retry in 15 seconds. Attempts: ${attempts}`);
+                    console.log(`In progress. Retry in 15 seconds. Attempts: ${attempts}`, res);
                     setTimeout(checkStatus, 15000);
                 } else {
                     console.log('Request amount exceeded');
@@ -84,7 +90,7 @@ const checkRequestStatus = (requestUUID) => {
                 console.log('Notarization success');
                 resolve(true)
             } else {
-                console.log('No suitable response');
+                console.log('No suitable response', res);
                 resolve("INVALID_RES");
             }
         }
@@ -102,4 +108,9 @@ const stapleApp =  async (appPath) => {
     } else {
         return false;
     }
+}
+
+const stapleValidate =  async (appPath) => {
+    const res = execSync(`xcrun stapler validate ${appPath}`, opts).toString();
+    return res;
 }
