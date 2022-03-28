@@ -52,12 +52,6 @@ module.exports = async function (params) {
                 console.log('status', status);
             }
 
-            /**
-             * Validate staple
-             */
-            const validateRes = await stapleValidate(appPath);
-            console.log(validateRes);
-
         } else {
             console.log('No RequestUUID in response');
         }
@@ -101,16 +95,10 @@ const checkRequestStatus = (requestUUID) => {
 
 const stapleApp =  async (appPath) => {
     const res = execSync(`xcrun stapler staple ${appPath}`, opts).toString();
-    console.log('res', res);
 
     if(res.includes('worked!')){
         return true;
     } else {
         return false;
     }
-}
-
-const stapleValidate =  async (appPath) => {
-    const res = execSync(`xcrun stapler validate ${appPath}`, opts).toString();
-    return res;
 }
