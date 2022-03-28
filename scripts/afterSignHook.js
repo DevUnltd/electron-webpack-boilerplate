@@ -45,7 +45,7 @@ module.exports = async function (params) {
 
                 if(staple){
                     console.log('Stape action success!');
-                } {
+                } else {
                     throw new Error("Staple action failed");
                 }
             } else {
@@ -66,7 +66,7 @@ module.exports = async function (params) {
 
     } catch (error) {
         console.error("Notarization failed!")
-        console.error('ERR', error)
+        // console.error('ERR', error)
     }
 }
 
@@ -79,7 +79,7 @@ const checkRequestStatus = (requestUUID) => {
 
             if(res.includes('in progress')){
                 if(attempts < 50){
-                    console.log(`In progress. Retry in 15 seconds. Attempts: ${attempts}`, res);
+                    console.log(`In progress. Checking again in 15 seconds. Attempts: ${attempts}`);
                     setTimeout(checkStatus, 15000);
                 } else {
                     console.log('Request amount exceeded');
@@ -90,7 +90,7 @@ const checkRequestStatus = (requestUUID) => {
                 console.log('Notarization success');
                 resolve(true)
             } else {
-                console.log('No suitable response', res);
+                console.log('No suitable response');
                 resolve("INVALID_RES");
             }
         }
