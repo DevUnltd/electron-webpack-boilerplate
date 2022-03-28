@@ -1,9 +1,16 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+const mode = process.env.NODE_ENV || "development";
+const staticPath =
+  mode === "production" ?
+    "`${path.join(process.resourcesPath, 'static')}`" :
+    "'static'";
 
 module.exports = {
-  mode: process.env.NODE_ENV || "development",
+  mode,
   target: 'electron-renderer',
   devtool: 'cheap-module-source-map',
   entry: './src/renderer/index.tsx',
@@ -39,6 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({ '__static': staticPath }),
     new MiniCssExtractPlugin({
         filename: 'css/index.css'
     }),

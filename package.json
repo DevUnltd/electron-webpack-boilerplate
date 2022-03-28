@@ -44,6 +44,15 @@
       "build/**/*",
       "embedded.provisionprofile"
     ],
+    "extraFiles": [
+      {
+        "from": "static",
+        "to": "resources/static",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
     "publish": [
       {
         "provider": "github",

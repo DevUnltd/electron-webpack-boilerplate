@@ -1,7 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
+
+const mode = process.env.NODE_ENV || "development";
+const staticPath =
+  mode === "production" ?
+    "`${path.join(process.resourcesPath, 'static')}`" :
+    "'static'";
 
 module.exports = {
-  mode: process.env.NODE_ENV || "development",
+  mode,
   target: 'electron-main',
   devtool: 'cheap-module-source-map',
   entry: './src/main/index.ts',
@@ -26,6 +33,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({ '__static': staticPath }),
+  ],
   resolve: {
     extensions: ['.ts', '.js']
   }
