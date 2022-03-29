@@ -10,5 +10,5 @@ it("app-content container should be defined", () => {
     attachTo: document.createElement("div"),
   });
 
-  expect(wrapper.find(".app-content")).toBeDefined();
+  expect(wrapper.find(".app-content").exists()).toBe(true);
 });
