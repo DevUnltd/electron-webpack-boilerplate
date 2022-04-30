@@ -39,9 +39,17 @@ npm install
 2. Edit `package.json` information (This will be used to package your app)
 3. (Optional) Set-up releases, code signing, notarization for your app. Additional docs on this coming soon.
 
-## 🚀 Development
+## ⚙️ Development
 
 - Use `npm start` to develop your app with Hot Reloading on changes.
 - Use `npm serve:dist` to serve a semi-production app from the build folder.
 - Use `npm run dist` to build executables for your app, according to the information in your package.json.
 - Use `npm run test` to run unit tests for your app.
+
+## 🚀 Publishing
+
+Check out the reference project [PRSS](https://github.com/hodgef/PRSS) for publishing ideas. This project includes code-signing, Apple notarization and building native packages (such as sqlite) with node-gyp:
+
+- Package configuration: [package.json](https://github.com/hodgef/PRSS/blob/master/package.json)
+- Package CI publishing: [publish.yml](https://github.com/hodgef/PRSS/blob/master/.github/workflows/publish.yml)
+- Release page (end result): https://github.com/hodgef/PRSS/releases
